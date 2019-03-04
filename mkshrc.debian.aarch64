@@ -1,0 +1,19 @@
+export HISTFILE=~/.mksh-history
+
+ PS1='${USER:=$(id -un)}'"@${HOSTNAME:=$(hostname)}:\$PWD
+$(
+ if (( USER_ID ));
+     then print $'\e[34m>>\e[00m';
+     else print $'\e[31m\#\e[00m';
+ fi) "
+
+BCPL64ROOT=$HOME/BCPL/cintcode
+BCPL64PATH=$BCPL64ROOT/cin64
+BCPL64HDRS=$BCPL64ROOT/g
+BCPL64SCRIPTS=$BCPL64ROOT/s
+
+export BCPL64ROOT BCPL64PATH BCPL64HDRS BCPL64SCRIPTS
+
+PATH=$PATH:$BCPL64ROOT/bin
+
+export PATH
