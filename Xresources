@@ -1,0 +1,115 @@
+! Sample `.Xresources` file for (new) XTerm users
+! TIP: If you are new to XTerm and have not modified your system Xresources, follow these initial instructions:
+! 1. Download and save this file as `.Xresources` to your user home directory (`~/.Xresources`).
+! 2. Run `$ xrdb -merge ~/.Xresources`.
+! 3. Open a new XTerm window. You can run `$ xterm &`.
+! NOTE: To view the applied contents of this file, run `$ xrdb -query`.
+! IMPORTANT:
+! If you update the value on any line in this file, run `$ xrdb -merge ~/.Xresources` to apply the update.
+! If you un/comment or add/remove one or more lines in this file (like when trying a different color theme),
+! run `$ xrdb -remove` to clear all resources, and then run `$ xrdb -merge ~/.Xresources` to apply the update.
+
+! Window title
+
+xterm*Title: XTerm
+
+! Window dimensions
+
+xterm*geometry: 106x54
+! example: 106x54 (for 15-inch laptops)
+! TIP: To conveniently determine your desired terminal window size for XTerm startup,
+! resize an XTerm window to the desired size and then run '$ resize' in it or see 'man resize'.
+xterm*internalBorder: 2
+
+! Typeface
+
+xterm*faceName: Monospace Regular
+xterm*faceSize: 12
+xterm*boldMode: false
+
+! Color theme
+
+! Solarized
+! Scheme: Ethan Schoonover (https://ethanschoonover.com/solarized/)
+
+#define S_base03        #002b36
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #839496
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
+
+xterm*background:            S_base03
+xterm*foreground:            S_base0
+xterm*fadeColor:             S_base03
+xterm*cursorColor:           S_base1
+xterm*pointerColorBackground:S_base01
+xterm*pointerColorForeground:S_base1
+
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #859900
+
+!! black dark/light
+xterm*color0:                S_base02
+xterm*color8:                S_base03
+
+!! red dark/light
+xterm*color1:                S_red
+xterm*color9:                S_orange
+
+!! green dark/light
+xterm*color2:                S_green
+xterm*color10:               S_base01
+
+!! yellow dark/light
+xterm*color3:                S_yellow
+xterm*color11:               S_base00
+
+!! blue dark/light
+xterm*color4:                S_blue
+xterm*color12:               S_base0
+
+!! magenta dark/light
+xterm*color5:                S_magenta
+xterm*color13:               S_violet
+
+!! cyan dark/light
+xterm*color6:                S_cyan
+xterm*color14:               S_base1
+
+!! white dark/light
+xterm*color7:                S_base2
+xterm*color15:               S_base3
+
+! History and scrolling
+
+xterm*saveLines: 10000
+xterm*scrollBar: false
+xterm*scrollLines: 1
+
+! Copy-paste
+
+XTerm.vt100.selectToClipboard: true
+
+! ~/scripts/termbar inside xterm(1) 
+termbar*faceName: Monospace Regular 
+termbar*faceSize: 12
+termbar*boldMode: false
+termbar*geometry: 191x1+0+0 
+termbar*internalBorder: 6 
+termbar*saveLines: 0 
+termbar*scrollBar: false 
+termbar*title: termbar 
+termbar*foreground: S_base03 
+termbar*background: S_base0 
+termbar*color1: S_red 
+termbar*color3: S_orange 
+
